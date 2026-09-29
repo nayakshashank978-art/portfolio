@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Onion Storage System | Project Portfolio</title>
+<style>
+:root{--bg:#faf8f4;--fg:#1f2a24;--mute:#66706a;--acc:#2f6b4f;--card:#fff;--line:#e4dfd5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121815;--fg:#eef1ee;--mute:#9aa59e;--acc:#6cc39a;--card:#1a221e;--line:#2a352f}}
+:root[data-theme="dark"]{--bg:#121815;--fg:#eef1ee;--mute:#9aa59e;--acc:#6cc39a;--card:#1a221e;--line:#2a352f}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font-family:Georgia,serif;line-height:1.65}
+.w{max-width:880px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;padding:22px 0;font:600 14px system-ui,sans-serif;color:var(--mute)}
+h1{font-size:clamp(34px,7vw,60px);line-height:1.1;margin:40px 0 12px}
+h2{font:700 13px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+.lead{font-size:20px;color:var(--mute);max-width:640px}
+.hero{height:280px;border-radius:14px;margin:32px 0;background:linear-gradient(135deg,var(--acc),#c9a24a);display:flex;align-items:end;padding:20px;color:#fff;font:600 14px system-ui,sans-serif}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 0;font-family:system-ui,sans-serif;font-size:14px}
+.meta b{display:block;color:var(--mute);font-weight:500;font-size:12px}
+section{margin:56px 0}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;font-family:system-ui,sans-serif;font-size:15px}
+.c strong{display:block;font-size:26px;color:var(--acc);font-family:Georgia,serif}
+.tags span{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:4px 12px;margin:0 6px 6px 0;font:13px system-ui,sans-serif}
+footer{border-top:1px solid var(--line);padding:30px 0 50px;font:14px system-ui,sans-serif;color:var(--mute)}
+a{color:var(--acc)}
+
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes flow{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}10%,30%{transform:rotate(16deg)}20%,40%{transform:rotate(-8deg)}50%{transform:rotate(10deg)}}
+.intro{padding:40px 0 10px;animation:up .8s both}
+.intro .hi{font:600 15px system-ui,sans-serif;color:var(--acc)}
+.wave{display:inline-block;transform-origin:70% 70%;animation:wave 2.2s 1s infinite}
+.intro h1{margin:8px 0 14px}
+.intro p{font-size:18px;max-width:640px;margin:0}
+.badge{display:inline-flex;align-items:center;gap:8px;font:13px system-ui,sans-serif;border:1px solid var(--line);border-radius:99px;padding:5px 14px;margin-top:16px}
+.badge i{width:8px;height:8px;border-radius:50%;background:var(--acc);animation:pulse 1.6s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 var(--acc)}100%{box-shadow:0 0 0 10px transparent}}
+.hero{background-size:200% 200%;animation:flow 10s ease infinite}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+.c{transition:transform .25s,box-shadow .25s}.c:hover{transform:translateY(-5px);box-shadow:0 10px 24px rgba(0,0,0,.12)}
+.tags span{transition:.2s}.tags span:hover{background:var(--acc);color:#fff;border-color:var(--acc)}
+.about{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start}
+.av{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--acc),#c9a24a);color:#fff;display:flex;align-items:center;justify-content:center;font:700 38px system-ui,sans-serif}
+@media(max-width:560px){.about{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--acc);z-index:9}
+.role{font:600 20px system-ui,sans-serif;margin:0 0 14px;min-height:30px}
+.role span{color:var(--acc)}.role em{display:inline-block;width:2px;height:1em;background:var(--acc);vertical-align:-3px;margin-left:2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.hero{position:relative;overflow:hidden}
+.fl-off{position:absolute;font-size:38px;opacity:.85;animation:fl 6s ease-in-out infinite}
+.fl:nth-child(1){top:14%;left:8%}.fl:nth-child(2){top:30%;right:12%;animation-delay:-2s;font-size:52px}.fl:nth-child(3){top:55%;left:35%;animation-delay:-4s;font-size:30px}.fl:nth-child(4){top:20%;left:60%;animation-delay:-1s;font-size:26px}
+@keyframes fl{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(14deg)}}
+.g .c:nth-child(2){transition-delay:.1s}.g .c:nth-child(3){transition-delay:.2s}.g .c:nth-child(4){transition-delay:.3s}
+.av{animation:bob 4s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px)}}
+h2{position:relative;display:inline-block}h2:after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--acc);transition:width .8s .3s}
+.in h2:after{width:100%}
+.meta div{transition:transform .25s}.meta div:hover{transform:translateY(-3px)}
+
+
+.hero{display:block;padding:0;height:320px;background:linear-gradient(160deg,#173d2d,#2f6b4f 60%,#5d8a55);background-size:100% 100%;animation:none}
+.hero svg{width:100%;height:100%;display:block}
+.on{transform-box:fill-box;transform-origin:center;animation:sw 3s ease-in-out infinite}
+@keyframes sw{50%{transform:scale(1.08)}}
+.sun{animation:sn 5s ease-in-out infinite}@keyframes sn{50%{opacity:.6}}
+.air{fill:none;stroke:#bfe6d3;stroke-width:2.5;stroke-linecap:round;stroke-dasharray:6 10;animation:fw 1.2s linear infinite}
+@keyframes fw{to{stroke-dashoffset:-16}}
+.fan g{transform-box:fill-box;transform-origin:center;animation:sp 1.4s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.pl{transform-box:fill-box;transform-origin:center;animation:pp 2s ease-out infinite}
+@keyframes pp{0%{transform:scale(1);opacity:1}70%{transform:scale(2.2);opacity:.35}100%{transform:scale(1);opacity:1}}
+.ro{position:absolute;left:16px;top:16px;display:flex;gap:10px;flex-wrap:wrap}
+.ro div{background:rgba(16,26,21,.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:8px 12px;color:#fff;font-family:system-ui,sans-serif}
+.ro small{display:block;font-size:11px;opacity:.7}.ro b{font-size:16px}
+@media(max-width:560px){.hero{height:280px}.ro div{padding:6px 9px}.ro b{font-size:14px}}
+@media (prefers-reduced-motion:reduce){.sig{display:none}}
+</style></head><body><div id="bar"></div><div class="w">
+<nav><span>SHASHANK V NAYAK</span><span>Projects · About · Contact</span></nav>
+
+<div class="intro"><div class="hi">Hello, I'm</div>
+<h1>Shashank V Nayak</h1>
+<p>An engineering student passionate about agriculture and technology. I design practical, low-cost solutions that help farmers store their harvest better and lose less of it.</p>
+<div class="role">I'm a <span id="ty">Designer</span><em></em></div>
+<div class="badge"><i></i>Open to internships &amp; collaborations</div></div>
+
+<h1 style="font-size:clamp(26px,5vw,40px);margin-top:48px">Smart Onion Storage System</h1>
+<p class="lead">A smart, well-ventilated shed that monitors temperature and humidity to keep onions fresh longer and cut post-harvest losses for small farmers.</p>
+<div class="hero"><svg viewBox="0 0 600 280" preserveAspectRatio="xMidYMax meet" aria-label="Animated smart onion storage shed">
+<circle class="sun" cx="70" cy="62" r="24" fill="#f2c94c"/>
+<rect x="0" y="240" width="600" height="40" fill="#1d4a37"/>
+<polygon points="150,112 300,48 450,112" fill="#173d2d"/>
+<rect x="170" y="112" width="260" height="128" fill="#e9dfc8"/>
+<rect x="186" y="128" width="228" height="112" fill="#22352b"/>
+<circle class="on" style="animation-delay:0.83s" cx="210" cy="156" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:0.98s" cx="232" cy="156" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:1.12s" cx="254" cy="156" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.27s" cx="276" cy="156" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.43s" cx="298" cy="156" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:1.58s" cx="320" cy="156" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.73s" cx="342" cy="156" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.88s" cx="364" cy="156" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:2.02s" cx="386" cy="156" r="9" fill="#e0b45a"/><rect x="196" y="165" width="208" height="4" rx="2" fill="#7a5a34"/><circle class="on" style="animation-delay:1.00s" cx="210" cy="191" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.15s" cx="232" cy="191" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.30s" cx="254" cy="191" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:1.45s" cx="276" cy="191" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.60s" cx="298" cy="191" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.75s" cx="320" cy="191" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:1.90s" cx="342" cy="191" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:2.05s" cx="364" cy="191" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:2.20s" cx="386" cy="191" r="9" fill="#c98a3a"/><rect x="196" y="200" width="208" height="4" rx="2" fill="#7a5a34"/><circle class="on" style="animation-delay:1.18s" cx="210" cy="227" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.33s" cx="232" cy="227" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.48s" cx="254" cy="227" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:1.63s" cx="276" cy="227" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:1.78s" cx="298" cy="227" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:1.93s" cx="320" cy="227" r="9" fill="#c98a3a"/><circle class="on" style="animation-delay:2.08s" cx="342" cy="227" r="9" fill="#e0b45a"/><circle class="on" style="animation-delay:2.23s" cx="364" cy="227" r="9" fill="#d9a441"/><circle class="on" style="animation-delay:2.38s" cx="386" cy="227" r="9" fill="#c98a3a"/><rect x="196" y="236" width="208" height="4" rx="2" fill="#7a5a34"/>
+<path class="air" d="M176 228 C240 205 262 160 300 108"/>
+<path class="air" d="M424 228 C360 205 338 160 300 108"/>
+<g class="fan"><circle cx="300" cy="88" r="20" fill="#e9dfc8"/><g><path d="M300 88 L300 72 A16 16 0 0 1 312 82 Z" fill="#2f6b4f"/><path d="M300 88 L316 88 A16 16 0 0 1 306 100 Z" fill="#2f6b4f"/><path d="M300 88 L300 104 A16 16 0 0 1 288 94 Z" fill="#2f6b4f"/><path d="M300 88 L284 88 A16 16 0 0 1 294 76 Z" fill="#2f6b4f"/></g></g>
+<circle class="pl" cx="232" cy="150" r="5" fill="#6cc39a"/><circle class="pl" style="animation-delay:.5s" cx="300" cy="184" r="5" fill="#6cc39a"/><circle class="pl" style="animation-delay:1s" cx="368" cy="150" r="5" fill="#6cc39a"/>
+<path id="sg" d="M436 96 Q480 50 520 108" fill="none" stroke="#f2c94c" stroke-width="1.5" stroke-dasharray="3 5"/>
+<circle class="sig" r="4" fill="#f2c94c"><animateMotion dur="2.4s" repeatCount="indefinite"><mpath href="#sg"/></animateMotion></circle>
+<rect x="505" y="108" width="44" height="76" rx="9" fill="#101a15" stroke="#e9dfc8" stroke-width="2"/>
+<path d="M518 146 l8 8 l14 -16" fill="none" stroke="#6cc39a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+<div class="ro"><div><small>Temperature</small><b id="rt">24.0°C</b></div><div><small>Humidity</small><b id="rh">62%</b></div><div><small>Fan</small><b>Auto</b></div></div></div>
+
+<div class="meta">
+<div><b>Role</b>Designer &amp; Developer</div><div><b>Year</b>2026</div>
+<div><b>Duration</b>3 months</div><div><b>Category</b>Agri-tech / IoT</div></div>
+
+<section><h2>About Me</h2>
+<div class="about"><div class="av">SN</div>
+<div><p>I'm Shashank V Nayak from Uttara Kannada, Karnataka. I grew up around farming communities and saw how much produce is lost after harvest. That pushed me toward engineering and design that solve real problems on the ground.</p>
+<p>I enjoy building prototypes, learning new tools, and turning ideas into working projects. Outside of studies I like exploring new technology and working on small projects with friends. (Edit this text to add your own story.)</p></div></div></section>
+
+<section><h2>Overview</h2>
+<p>Onions are prone to rotting, sprouting and weight loss in storage because conditions inside traditional sheds are unmonitored. This project designs a low-cost smart shed that senses its environment and acts automatically.</p></section>
+
+<section><h2>Problem</h2>
+<p>Humid air and poor ventilation trigger fungal rot, and one bad onion spoils the pile before anyone notices. Small farmers need something affordable, simple, and reliable.</p></section>
+
+<section><h2>Solution</h2>
+<div class="g">
+<div class="c"><strong>01</strong>Sensors track temperature, humidity and CO₂ inside the onion stack.</div>
+<div class="c"><strong>02</strong>A microcontroller drives exhaust fans and vents based on thresholds.</div>
+<div class="c"><strong>03</strong>Alerts reach the farmer by SMS or app when conditions go out of range.</div>
+<div class="c"><strong>04</strong>Raised, slatted bins with bottom-up airflow keep onions dry and off the floor.</div></div></section>
+
+<section><h2>Process</h2>
+<p><b>Research</b> — visits to onion farms and interviews. <b>Design</b> — shed layout, airflow sketches, circuit diagram. <b>Build</b> — prototype with ESP32, DHT22 and CO₂ sensors. <b>Test</b> — two-week trial compared against a control shed.</p></section>
+
+<section><h2>Results</h2>
+<div class="g">
+<div class="c"><strong>-<span class="cnt" data-to="40">40</span>%</strong>Spoilage (replace with your data)</div>
+<div class="c"><strong>24/7</strong>Remote monitoring</div>
+<div class="c"><strong>₹0</strong>Placeholder: cost per shed</div></div></section>
+
+<section><h2>Education</h2>
+<div class="g">
+<div class="c"><strong>B.E.</strong>Your Branch · Alva's Institute of Engineering &amp; Technology<br>2025 – 2029 · CGPA: X.X</div>
+<div class="c"><strong>PUC</strong>Saraswati PU College, Kumta<br>2023 – 2025 · Science (PCM)</div>
+<div class="c"><strong>Class X</strong>Kendriya Vidyalaya (KVS), Karwar<br>2023 · CBSE</div></div></section>
+
+<section><h2>Tools &amp; Skills</h2>
+<div class="tags"><span>ESP32</span><span>Arduino</span><span>AutoCAD</span><span>SolidWorks</span><span>Adobe Illustrator</span><span>Data logging</span></div></section>
+
+<footer>Contact: you@email.com · <a href="#">LinkedIn</a> · <a href="#">Behance</a><br>© 2026 Shashank V Nayak</footer>
+</div><script>
+document.querySelectorAll('section,.meta,.hero').forEach(function(e){e.classList.add('rv')});
+var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+
+var rm=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var bar=document.getElementById('bar');
+addEventListener('scroll',function(){var h=document.documentElement;bar.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight||1)*100)+'%'});
+if(!rm){
+var ro=['Engineering Student','Designer','Problem Solver','Agri-Tech Enthusiast'],ri=0,ci=0,del=false,ty=document.getElementById('ty');
+(function tick(){var w=ro[ri];ci+=del?-1:1;ty.textContent=w.slice(0,ci);var d=del?45:90;
+if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%ro.length;d=300}setTimeout(tick,d)})();
+var co=new IntersectionObserver(function(en){en.forEach(function(x){if(!x.isIntersecting)return;co.unobserve(x.target);
+var el=x.target,to=+el.dataset.to,t0=null;(function st(t){t0=t0||t;var p=Math.min((t-t0)/1400,1);el.textContent=Math.round(to*p);if(p<1)requestAnimationFrame(st)})(performance.now())})},{threshold:.6});
+document.querySelectorAll('.cnt').forEach(function(e){e.textContent='0';co.observe(e)});
+}
+
+setInterval(function(){var t=(24+Math.sin(Date.now()/2500)*1.2).toFixed(1),h=Math.round(62+Math.sin(Date.now()/3200)*4);
+document.getElementById('rt').textContent=t+'°C';document.getElementById('rh').textContent=h+'%'},1200);
+</script></body></html>
